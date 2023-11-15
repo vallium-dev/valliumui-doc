@@ -1,0 +1,54 @@
+# Badge
+import { Tabs } from "nextra/components";
+import { Card, Badge } from "valliumui";
+import ComponentPropSection from "../../../components/props";
+
+The `Badge` component is used to highlight text.
+
+<Tabs items={["Usage", "Props"]}>
+    <Tabs.Tab>
+    ## Import
+    ```js copy
+    import { Badge } from "valliumui";
+    ```
+
+    ## Usage
+    <br/>
+    <Card>
+        <Badge>Badge</Badge>
+    </Card>
+
+    ```js copy
+    <Badge>Badge</Badge>
+    ```
+
+    ## Badge `variant`
+    Use the variant property to change the visual style of the Badge. Valid values are `outlined`, `filled`, `combed`.
+    <br/>
+    <Card flex gap="4">
+        <Badge variant="outlined">Outlined</Badge>
+        <Badge variant="filled">Filled</Badge>
+        <Badge variant="combed">Combed</Badge>
+    </Card>
+
+    ```js copy
+    <Card flex gap="4">
+        <Badge variant="outlined">Outlined</Badge>
+        <Badge variant="filled">Filled</Badge>
+        <Badge variant="combed">Combed</Badge>
+    </Card>
+    ```
+    </Tabs.Tab>
+
+    <Tabs.Tab>
+    ## Badge Properties
+    These are the specific properties of the `Badge` component.
+    <br/>
+    <ComponentPropSection property={{
+        name: "variant",
+        description: "The variant of the badge",
+        type: ["outlined", "filled", "combed"],
+        default: "outlined",
+    }}/>
+    </Tabs.Tab>
+</Tabs>

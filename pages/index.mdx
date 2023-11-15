@@ -1,0 +1,49 @@
+import { Tabs } from "nextra/components";
+
+# Introduction
+
+Welcome to the documentation of the [ValliumUI](https://ui.vallium.dev) library.
+It is a simple to use UI library for react based on the vallium design system used by [Vallium](https://vallium.dev)
+
+## Installation
+
+To install the library into your project
+
+```sh npm2yarn copy
+npm i valliumui@latest
+```
+
+After the installation, you have to update your `tailwind.config.js` file.
+Add the following to your config file.
+
+```js filename="tailwind.config.js" {6,10-24} copy
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+	content: [
+		"./src/**/*.{js,ts,jsx,tsx,mdx}",
+		"./node_modules/valliumui/**/*.{js,ts,jsx,tsx,mdx}",
+	],
+	theme: {
+		extend: {
+			colors: {
+				vallium: {
+					50: "#eef9ff",
+					100: "#d9f2ff",
+					200: "#bbe9ff",
+					300: "#8cdcff",
+					400: "#56c6ff",
+					500: "#2eaaff",
+					600: "#188cf8",
+					700: "#1178ee",
+					800: "#145db9",
+					900: "#174f91",
+					950: "#133158",
+				},
+			},
+		},
+	},
+	plugins: [],
+};
+export default config;
+```

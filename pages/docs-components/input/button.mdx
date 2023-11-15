@@ -1,0 +1,107 @@
+# Button
+import { Tabs } from "nextra/components";
+import { Card, Button } from "valliumui";
+import ComponentPropSection from "../../../components/props";
+
+The `Button` component is used to trigget actions or events.
+
+<Tabs items={["Usage", "Props"]}>
+    <Tabs.Tab>
+    ## Import
+    ```js copy
+    import { Button } from "valliumui";
+    ```
+
+    ## Usage
+    <br/>
+    <Card>
+        <Button>Button</Button>
+    </Card>
+
+    ```js copy
+    <Button>Button</Button>
+    ```
+
+    ## Button `as`
+    The button can be used as different element type such as `button` or `a`.
+    Depending on the use case, you can decide what element type the button will be.
+    The `Button` component will use the `button` element type as the default.
+
+    You can use the `as` property to decide which element type the button will be.
+    Visually they will look exactly the same.
+    <br/>
+    <Card flex gap="4">
+    <Button>'button' element button</Button>
+    <Button as="a">'a' element button</Button>
+    </Card>
+
+    ```js copy
+    <Card flex gap="4">
+        <Button>'button' element button</Button>
+        <Button as="a">'a' element button</Button>
+    </Card>
+    ```
+
+    ## Button `variant`
+    Use the `variant` property to change the visual style of the Button.
+    Valid values are `white`, `dark`, `accent`.
+    <br/>
+    <Card flex gap="4">
+        <Button variant="white">White</Button>
+        <Button variant="dark">Dark</Button>
+        <Button variant="accent">Accent</Button>
+    </Card>
+
+    ```js copy
+    <Card flex gap="4">
+        <Button variant="white">White</Button>
+        <Button variant="dark">Dark</Button>
+        <Button variant="accent">Accent</Button>
+    </Card>
+    ```
+
+    ## Button `scale`
+    Use the `scale` property to change the size of the Button.
+    Valid values are `thin`, `small`, `normal`, `big`.
+    <br/>
+    <Card flex items="center" gap="4">
+        <Button scale="thin">Thin</Button>
+        <Button scale="small">Small</Button>
+        <Button scale="normal">Normal</Button>
+        <Button scale="big">Big</Button>
+    </Card>
+
+    ```js copy
+    <Card flex items="center" gap="4">
+        <Button scale="thin">Thin</Button>
+        <Button scale="small">Small</Button>
+        <Button scale="normal">Normal</Button>
+        <Button scale="big">Big</Button>
+    </Card>
+    ```
+    </Tabs.Tab>
+
+    <Tabs.Tab>
+    ## Button Properties
+    These are the specific properties of the `Button` component.
+    <br/>
+    <ComponentPropSection property={{
+        name: "as",
+        description: "The element type the button will use",
+        type: ["a", "button"],
+        default: "button",
+    }}/>
+    <ComponentPropSection property={{
+        name: "variant",
+        description: "The variant of the button",
+        type: ["white", "dark", "accent"],
+        default: "white",
+    }}/>
+    <ComponentPropSection property={{
+        name: "scale",
+        description: "The scale of the button",
+        type: ["thin", "small", "normal", "big"],
+        default: "normal",
+    }}/>
+    </Tabs.Tab>
+</Tabs>

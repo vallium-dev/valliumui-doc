@@ -1,0 +1,148 @@
+# Text
+import { Tabs } from "nextra/components";
+import { Card, Text } from "valliumui";
+import ComponentPropSection from "../../../components/props";
+
+The `Text` component is used to display text.
+
+<Tabs items={["Usage", "Props"]}>
+    <Tabs.Tab>
+    ## Import
+    ```js copy
+    import { Text } from "valliumui";
+    ```
+
+    ## Usage
+    <br/>
+    <Card>
+        <Text>Vallium looks good!</Text>
+    </Card>
+
+    ```js copy
+    <Text>Vallium looks good!</Text>
+    ```
+
+    ## Text `type`
+    The text component uses different HTML elements to display the text.
+    Each type has a different size for usage in different use cases.
+    The `Text` component will use the `p` element type as the default. 
+
+    Use the `type` property to decide which element type the text will be.
+    Valid value are `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `p`.
+    <br/>
+    <Card flex direction="col" gap="4">
+        <Text type="h1">Heading 1</Text>
+        <Text type="h2">Heading 2</Text>
+        <Text type="h3">Heading 3</Text>
+        <Text type="h4">Heading 4</Text>
+        <Text type="h5">Heading 5</Text>
+        <Text type="h6">Heading 6</Text>
+        <Text type="p">Paragraph</Text>
+    </Card>
+
+    ```js copy
+    <Card flex direction="col" gap="4">
+        <Text type="h1">Heading 1</Text>
+        <Text type="h2">Heading 2</Text>
+        <Text type="h3">Heading 3</Text>
+        <Text type="h4">Heading 4</Text>
+        <Text type="h5">Heading 5</Text>
+        <Text type="h6">Heading 6</Text>
+        <Text type="p">Paragraph</Text>
+    </Card>
+    ```
+
+    ## Text `color`
+    Use the `color` property to change the color of the text. Valid values are all TailwindCSS color classes.
+    <br/>
+    <Card>
+        <Text color="text-red-500">I am a red text now!</Text>
+    </Card>
+
+    ```js copy
+    <Text color="text-red-500">I am red now!</Text>
+    ```
+
+    ## Text `underline`
+    Use the `underline` property to display a underline under the text.
+    <br/>
+    <Card>
+        <Text underline>Look at my underline!</Text>
+    </Card>
+
+    ```js copy
+    <Text underline>Look at my underline!</Text>
+    ```
+
+    ## Text `weight`
+    Use the `weight` property to change the weight (thickness) of the text.
+    Valid value are `bold`, `normal`, `light`, `medium`, `semibold`.
+    <br/>
+    <Card flex items="center" gap="4">
+        <div className="flex flex-col gap-4">
+            <Text weight="light">I am a light text!</Text>
+            <Text weight="normal">I am a normal text!</Text>
+            <Text weight="medium">I am a medium text!</Text>
+            <Text weight="semibold">I am a semibold text!</Text>
+            <Text weight="bold">I am a bold text!</Text>
+        </div>
+        <div className="flex flex-col gap-4">
+            <Text type="h1" weight="light">I am a light h1!</Text>
+            <Text type="h1"  weight="normal">I am a normal h1!</Text>
+            <Text type="h1"  weight="medium">I am a medium h1!</Text>
+            <Text type="h1"  weight="semibold">I am a semibold h1!</Text>
+            <Text type="h1"  weight="bold">I am a bold h1!</Text>
+        </div>
+    </Card>
+
+    ```js copy
+    <Card flex items="center" gap="4">
+        <div className="flex flex-col gap-4">
+            <Text weight="light">I am a light text!</Text>
+            <Text weight="normal">I am a normal text!</Text>
+            <Text weight="medium">I am a medium text!</Text>
+            <Text weight="semibold">I am a semibold text!</Text>
+            <Text weight="bold">I am a bold text!</Text>
+        </div>
+        <div className="flex flex-col gap-4">
+            <Text type="h1" weight="light">I am a light h1!</Text>
+            <Text type="h1" weight="normal">I am a normal h1!</Text>
+            <Text type="h1" weight="medium">I am a medium h1!</Text>
+            <Text type="h1" weight="semibold">I am a semibold h1!</Text>
+            <Text type="h1" weight="bold">I am a bold h1!</Text>
+        </div>
+    </Card>
+    ```
+
+    </Tabs.Tab>
+
+    <Tabs.Tab>
+    ## Button Properties
+    These are the specific properties of the `Button` component.
+    <br/>
+    <ComponentPropSection property={{
+        name: "type",
+        description: "The element type the text will use",
+        type: ["h1", "h2", "h3", "h4", "h5", "h6", "p"],
+        default: "p",
+    }}/>
+    <ComponentPropSection property={{
+        name: "color",
+        description: "The color of the text",
+        type: "All TailwindCSS color classes",
+        default: "text-white",
+    }}/>
+    <ComponentPropSection property={{
+        name: "underline",
+        description: "If the text is underlined",
+        type: ["true", "false"],
+        default: "false",
+    }}/>
+    <ComponentPropSection property={{
+        name: "weight",
+        description: "The weight (thickness) of the text",
+        type: ["bold" | "normal" | "light" | "medium" | "semibold"],
+        default: "normal",
+    }}/>
+    </Tabs.Tab>
+</Tabs>
