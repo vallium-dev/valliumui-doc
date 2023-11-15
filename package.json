@@ -13,6 +13,7 @@
 	],
 	"homepage": "https://github.com/vallium-dev/valliumui-doc#readme",
 	"dependencies": {
+		"@napi-rs/simple-git": "^0.1.9",
 		"clsx": "^2.0.0",
 		"next": "^13.0.6",
 		"nextra": "latest",
