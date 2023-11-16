@@ -32,6 +32,22 @@ export function ControlledInputExample() {
     );
 }
 
+export function InputAddonAsButtonExample() {
+    const [value, setValue] = useState("");
+    const handleChange = (event) => setValue(event.target.value);
+    const handleClick = () => alert(value);
+
+    return (
+    <Card gap="4">
+        <InputGroup>
+            <InputItemLeft>-&gt;</InputItemLeft>
+            <Input onChange={handleChange} value={value} placeholder="Enter some text"/>
+            <InputAddonRight disabled={value.length === 0} button onClick={handleClick}>Print</InputAddonRight>
+        </InputGroup>
+    </Card>
+    );
+}
+
 The `Input` component is used to get user input in a text field.
 
 <Tabs items={["Usage", "Props"]}>
@@ -55,13 +71,13 @@ The `Input` component is used to get user input in a text field.
     Use the `variant` property to change the visual style of the Input.
     Valid values are `outlined`, `filled`.
     <br/>
-    <Card flex direction="col" gap="4">
+    <Card gap="4">
         <Input variant="outlined" placeholder="i am a outlined input field"/>
         <Input variant="filled" placeholder="i am a filled input field"/>
     </Card>
 
     ```js copy
-    <Card flex direction="col" gap="4">
+    <Card gap="4">
         <Input variant="outlined" placeholder="i am a outlined input field"/>
         <Input variant="filled" placeholder="i am a filled input field"/>
     </Card>
@@ -76,7 +92,7 @@ The `Input` component is used to get user input in a text field.
     ```
 
     <br/>
-    <Card flex direction="col" gap="4">
+    <Card gap="4">
         <InputGroup>
             <InputAddonLeft>Left</InputAddonLeft>
             <Input placeholder="there could be the right addon ->"/>
@@ -89,7 +105,7 @@ The `Input` component is used to get user input in a text field.
     </Card>
 
     ```js copy
-    <Card flex direction="col" gap="4">
+    <Card gap="4">
         <InputGroup>
             <InputAddonLeft>Left</InputAddonLeft>
             <Input placeholder="there could be the right addon ->"/>
@@ -100,6 +116,29 @@ The `Input` component is used to get user input in a text field.
             <InputAddonRight>.com</InputAddonRight>
         </InputGroup>
     </Card>
+    ```
+
+    ## Input addons as buttons
+    You can pass the `button` property to an addon to make it look like a button.
+    <br/>
+    <InputAddonAsButtonExample/>
+
+    ```js copy
+    import { useState } from "react";
+
+    const [value, setValue] = useState("");
+    const handleChange = (event) => setValue(event.target.value);
+    const handleClick = () => alert(value);
+
+    return (
+    <Card gap="4">
+        <InputGroup>
+            <InputItemLeft>-&gt;</InputItemLeft>
+            <Input onChange={handleChange} value={value} placeholder="Enter some text"/>
+            <InputAddonRight disabled={value.length === 0} button onClick={handleClick}>Print</InputAddonRight>
+        </InputGroup>
+    </Card>
+    );
     ```
     
     ## Input items
@@ -113,7 +152,7 @@ The `Input` component is used to get user input in a text field.
     ```
 
     <br/>
-    <Card flex direction="col" gap="4">
+    <Card gap="4">
         <InputGroup>
             <InputItemLeft>$</InputItemLeft>
             <Input placeholder="there could be the right item ->"/>
@@ -126,7 +165,7 @@ The `Input` component is used to get user input in a text field.
     </Card>
 
     ```js copy
-    <Card flex direction="col" gap="4">
+    <Card gap="4">
         <InputGroup>
             <InputItemLeft>$</InputItemLeft>
             <Input placeholder="there could be the right addon ->"/>
@@ -142,11 +181,11 @@ The `Input` component is used to get user input in a text field.
     ## Combining addons and items
     You can combine addons and items however you want to.
     <br/>
-    <Card flex direction="col" gap="4">
+    <Card gap="4">
         <InputGroup>
-            <InputItemLeft>go:</InputItemLeft>
+            <InputItemLeft>-&gt;</InputItemLeft>
             <Input placeholder="item and addon combined!"/>
-            <InputAddonRight>Go</InputAddonRight>
+            <InputAddonRight button>Go</InputAddonRight>
         </InputGroup>
         <InputGroup>
             <InputAddonLeft>Price</InputAddonLeft>
@@ -155,24 +194,31 @@ The `Input` component is used to get user input in a text field.
         </InputGroup>
         <InputGroup>
             <InputAddonLeft>Price</InputAddonLeft>
-            <InputItemLeft>$</InputItemLeft>
+            <InputItemLeft>=</InputItemLeft>
             <Input placeholder="works also combined!"/>
             <InputItemRight>$</InputItemRight>
-            <InputAddonRight>Price</InputAddonRight>
+            <InputAddonRight button>Search</InputAddonRight>
         </InputGroup>
     </Card>
 
     ```js copy
-    <Card flex direction="col" gap="4">
+    <Card gap="4">
         <InputGroup>
-            <InputItemLeft>go:</InputItemLeft>
+            <InputItemLeft>-&gt;</InputItemLeft>
             <Input placeholder="item and addon combined!"/>
-            <InputAddonRight>Go</InputAddonRight>
+            <InputAddonRight button>Go</InputAddonRight>
         </InputGroup>
         <InputGroup>
             <InputAddonLeft>Price</InputAddonLeft>
             <Input placeholder="also works swapped!"/>
             <InputItemRight>€</InputItemRight>
+        </InputGroup>
+        <InputGroup>
+            <InputAddonLeft>Price</InputAddonLeft>
+            <InputItemLeft>=</InputItemLeft>
+            <Input placeholder="works also combined!"/>
+            <InputItemRight>$</InputItemRight>
+            <InputAddonRight button>Search</InputAddonRight>
         </InputGroup>
     </Card>
     ```
@@ -183,6 +229,8 @@ The `Input` component is used to get user input in a text field.
     <ControlledInputExample/>
 
     ```js copy
+    import { useState } from "react";
+
     const [value, setValue] = useState("");
     const handleChange = (event) => setValue(event.target.value);
 
@@ -199,6 +247,7 @@ The `Input` component is used to get user input in a text field.
 
     ```js copy
     import { useState } from "react";
+
     const [show, setShow] = useState(false);
     const handleClick = () => setShow(!show);
 

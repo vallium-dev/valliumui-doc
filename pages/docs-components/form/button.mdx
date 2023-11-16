@@ -30,13 +30,13 @@ The `Button` component is used to trigget actions or events.
     You can use the `as` property to decide which element type the button will be.
     Visually they will look exactly the same.
     <br/>
-    <Card flex gap="4">
-    <Button>'button' element button</Button>
-    <Button as="a">'a' element button</Button>
+    <Card row gap="4">
+        <Button>'button' element button</Button>
+        <Button as="a">'a' element button</Button>
     </Card>
 
     ```js copy
-    <Card flex gap="4">
+    <Card row gap="4">
         <Button>'button' element button</Button>
         <Button as="a">'a' element button</Button>
     </Card>
@@ -46,14 +46,14 @@ The `Button` component is used to trigget actions or events.
     Use the `variant` property to change the visual style of the Button.
     Valid values are `white`, `dark`, `accent`.
     <br/>
-    <Card flex gap="4">
+    <Card row gap="4">
         <Button variant="white">White</Button>
         <Button variant="dark">Dark</Button>
         <Button variant="accent">Accent</Button>
     </Card>
 
     ```js copy
-    <Card flex gap="4">
+    <Card row gap="4">
         <Button variant="white">White</Button>
         <Button variant="dark">Dark</Button>
         <Button variant="accent">Accent</Button>
@@ -64,7 +64,7 @@ The `Button` component is used to trigget actions or events.
     Use the `scale` property to change the size of the Button.
     Valid values are `thin`, `small`, `normal`, `big`.
     <br/>
-    <Card flex items="center" gap="4">
+    <Card row items="center" gap="4">
         <Button scale="thin">Thin</Button>
         <Button scale="small">Small</Button>
         <Button scale="normal">Normal</Button>
@@ -72,7 +72,7 @@ The `Button` component is used to trigget actions or events.
     </Card>
 
     ```js copy
-    <Card flex items="center" gap="4">
+    <Card row items="center" gap="4">
         <Button scale="thin">Thin</Button>
         <Button scale="small">Small</Button>
         <Button scale="normal">Normal</Button>

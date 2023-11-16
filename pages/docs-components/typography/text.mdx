@@ -1,6 +1,6 @@
 # Text
 import { Tabs } from "nextra/components";
-import { Card, Text } from "valliumui";
+import { Card, Text, Stack } from "valliumui";
 import ComponentPropSection from "../../../components/props";
 
 The `Text` component is used to display text.
@@ -30,7 +30,7 @@ The `Text` component is used to display text.
     Use the `type` property to decide which element type the text will be.
     Valid value are `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `p`.
     <br/>
-    <Card flex direction="col" gap="4">
+    <Card gap="4">
         <Text type="h1">Heading 1</Text>
         <Text type="h2">Heading 2</Text>
         <Text type="h3">Heading 3</Text>
@@ -41,7 +41,7 @@ The `Text` component is used to display text.
     </Card>
 
     ```js copy
-    <Card flex direction="col" gap="4">
+    <Card gap="4">
         <Text type="h1">Heading 1</Text>
         <Text type="h2">Heading 2</Text>
         <Text type="h3">Heading 3</Text>
@@ -78,47 +78,47 @@ The `Text` component is used to display text.
     Use the `weight` property to change the weight (thickness) of the text.
     Valid value are `bold`, `normal`, `light`, `medium`, `semibold`.
     <br/>
-    <Card flex items="center" gap="4">
-        <div className="flex flex-col gap-4">
+    <Card row items="center" gap="4">
+        <Stack gap="2">
             <Text weight="light">I am a light text!</Text>
             <Text weight="normal">I am a normal text!</Text>
             <Text weight="medium">I am a medium text!</Text>
             <Text weight="semibold">I am a semibold text!</Text>
             <Text weight="bold">I am a bold text!</Text>
-        </div>
-        <div className="flex flex-col gap-4">
+        </Stack>
+        <Stack gap="2">
             <Text type="h1" weight="light">I am a light h1!</Text>
             <Text type="h1"  weight="normal">I am a normal h1!</Text>
             <Text type="h1"  weight="medium">I am a medium h1!</Text>
             <Text type="h1"  weight="semibold">I am a semibold h1!</Text>
             <Text type="h1"  weight="bold">I am a bold h1!</Text>
-        </div>
+        </Stack>
     </Card>
 
     ```js copy
-    <Card flex items="center" gap="4">
-        <div className="flex flex-col gap-4">
+    <Card row items="center" gap="4">
+        <Stack gap="2">
             <Text weight="light">I am a light text!</Text>
             <Text weight="normal">I am a normal text!</Text>
             <Text weight="medium">I am a medium text!</Text>
             <Text weight="semibold">I am a semibold text!</Text>
             <Text weight="bold">I am a bold text!</Text>
-        </div>
-        <div className="flex flex-col gap-4">
+        </Stack>
+        <Stack gap="2">
             <Text type="h1" weight="light">I am a light h1!</Text>
             <Text type="h1" weight="normal">I am a normal h1!</Text>
             <Text type="h1" weight="medium">I am a medium h1!</Text>
             <Text type="h1" weight="semibold">I am a semibold h1!</Text>
             <Text type="h1" weight="bold">I am a bold h1!</Text>
-        </div>
+        </Stack>
     </Card>
     ```
 
     </Tabs.Tab>
 
     <Tabs.Tab>
-    ## Button Properties
-    These are the specific properties of the `Button` component.
+    ## Text Properties
+    These are the specific properties of the `Text` component.
     <br/>
     <ComponentPropSection property={{
         name: "type",

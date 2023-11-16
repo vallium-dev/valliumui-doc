@@ -25,16 +25,16 @@ The `Badge` component is used to highlight text.
     ## Badge `variant`
     Use the variant property to change the visual style of the Badge. Valid values are `outlined`, `filled`, `combed`.
     <br/>
-    <Card flex gap="4">
-        <Badge variant="outlined">Outlined</Badge>
+    <Card row gap="4">
         <Badge variant="filled">Filled</Badge>
+        <Badge variant="outlined">Outlined</Badge>
         <Badge variant="combed">Combed</Badge>
     </Card>
 
     ```js copy
-    <Card flex gap="4">
-        <Badge variant="outlined">Outlined</Badge>
+    <Card row gap="4">
         <Badge variant="filled">Filled</Badge>
+        <Badge variant="outlined">Outlined</Badge>
         <Badge variant="combed">Combed</Badge>
     </Card>
     ```
@@ -48,7 +48,7 @@ The `Badge` component is used to highlight text.
         name: "variant",
         description: "The variant of the badge",
         type: ["outlined", "filled", "combed"],
-        default: "outlined",
+        default: "filled",
     }}/>
     </Tabs.Tab>
 </Tabs>
