@@ -11,6 +11,10 @@
 	"contributors": [
 		"Christopher Brandt @Vallium"
 	],
+	"bugs": {
+		"url": "https://github.com/vallium-dev/valliumui-doc/issues",
+		"email": "info@vallium.dev"
+	},
 	"homepage": "https://github.com/vallium-dev/valliumui-doc#readme",
 	"dependencies": {
 		"@napi-rs/simple-git": "^0.1.9",
@@ -21,7 +25,8 @@
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"tailwind-merge": "^2.0.0",
-		"valliumui": "^0.0.11"
+		"usehooks-ts": "^2.9.1",
+		"valliumui": "^0.0.18"
 	},
 	"devDependencies": {
 		"@types/node": "18.11.10",

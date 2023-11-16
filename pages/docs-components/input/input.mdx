@@ -1,0 +1,273 @@
+# Input
+import { Tabs } from "nextra/components";
+import { Card, Text, Button, Input, InputGroup, InputAddonLeft, InputAddonRight, InputItemLeft, InputItemRight } from "valliumui";
+import ComponentPropSection from "../../../components/props";
+
+import { useState } from "react";
+export function PasswordInputExample() {
+    const [show, setShow] = useState(false);
+    const handleClick = () => setShow(!show);
+
+    return (
+        <Card>
+            <InputGroup>
+                <Input type={show ? "text" : "password"} placeholder="Enter password"/>
+                <InputAddonRight className="select-none cursor-pointer" onClick={handleClick}>
+                    {show ? "Hide" : "Show"}
+                </InputAddonRight>
+            </InputGroup>
+        </Card>
+    );
+}
+
+export function ControlledInputExample() {
+    const [value, setValue] = useState("");
+    const handleChange = (event) => setValue(event.target.value);
+
+    return (
+        <Card flex direction="col" gap="4">
+            <Text>Value of input: {value}</Text>
+            <Input onChange={handleChange} value={value} placeholder="Enter some text"/>
+        </Card>
+    );
+}
+
+The `Input` component is used to get user input in a text field.
+
+<Tabs items={["Usage", "Props"]}>
+    <Tabs.Tab>
+    ## Import
+    ```js copy
+    import { Input } from "valliumui";
+    ```
+
+    ## Usage
+    <br/>
+    <Card>
+        <Input placeholder="enter text here"/>
+    </Card>
+
+    ```js copy
+    <Input placeholder="enter text here"/>
+    ```
+
+    ## Input `variant`
+    Use the `variant` property to change the visual style of the Input.
+    Valid values are `outlined`, `filled`.
+    <br/>
+    <Card flex direction="col" gap="4">
+        <Input variant="outlined" placeholder="i am a outlined input field"/>
+        <Input variant="filled" placeholder="i am a filled input field"/>
+    </Card>
+
+    ```js copy
+    <Card flex direction="col" gap="4">
+        <Input variant="outlined" placeholder="i am a outlined input field"/>
+        <Input variant="filled" placeholder="i am a filled input field"/>
+    </Card>
+    ```
+
+    ## Input addons
+    You can add addons to the left and right of any `Input` component.
+
+    Simply import the addons and the `InputGroup` component.
+    ```js copy
+    import { Input, InputAddonLeft, InputAddonRight, InputGroup } from "valliumui";
+    ```
+
+    <br/>
+    <Card flex direction="col" gap="4">
+        <InputGroup>
+            <InputAddonLeft>Left</InputAddonLeft>
+            <Input placeholder="there could be the right addon ->"/>
+        </InputGroup>
+        <InputGroup>
+            <InputAddonLeft>https://</InputAddonLeft>
+            <Input placeholder="website"/>
+            <InputAddonRight>.com</InputAddonRight>
+        </InputGroup>
+    </Card>
+
+    ```js copy
+    <Card flex direction="col" gap="4">
+        <InputGroup>
+            <InputAddonLeft>Left</InputAddonLeft>
+            <Input placeholder="there could be the right addon ->"/>
+        </InputGroup>
+        <InputGroup>
+            <InputAddonLeft>https://</InputAddonLeft>
+            <Input placeholder="website"/>
+            <InputAddonRight>.com</InputAddonRight>
+        </InputGroup>
+    </Card>
+    ```
+    
+    ## Input items
+    Similar to addons, you can add items to the left and right of any `Input` component.
+    
+    Items will not like addons added to the outside, but on the inside of the input component.
+
+    Simply import the items and the `InputGroup` component.
+    ```js copy
+    import { Input, InputItemLeft, InputItemRight, InputGroup } from "valliumui";
+    ```
+
+    <br/>
+    <Card flex direction="col" gap="4">
+        <InputGroup>
+            <InputItemLeft>$</InputItemLeft>
+            <Input placeholder="there could be the right item ->"/>
+        </InputGroup>
+        <InputGroup>
+            <InputItemLeft>$</InputItemLeft>
+            <Input placeholder="price"/>
+            <InputItemRight>,00</InputItemRight>
+        </InputGroup>
+    </Card>
+
+    ```js copy
+    <Card flex direction="col" gap="4">
+        <InputGroup>
+            <InputItemLeft>$</InputItemLeft>
+            <Input placeholder="there could be the right addon ->"/>
+        </InputGroup>
+        <InputGroup>
+            <InputItemLeft>$</InputItemLeft>
+            <Input placeholder="price"/>
+            <InputItemRight>,00</InputItemRight>
+        </InputGroup>
+    </Card>
+    ```
+
+    ## Combining addons and items
+    You can combine addons and items however you want to.
+    <br/>
+    <Card flex direction="col" gap="4">
+        <InputGroup>
+            <InputItemLeft>go:</InputItemLeft>
+            <Input placeholder="item and addon combined!"/>
+            <InputAddonRight>Go</InputAddonRight>
+        </InputGroup>
+        <InputGroup>
+            <InputAddonLeft>Price</InputAddonLeft>
+            <Input placeholder="also works swapped!"/>
+            <InputItemRight>€</InputItemRight>
+        </InputGroup>
+        <InputGroup>
+            <InputAddonLeft>Price</InputAddonLeft>
+            <InputItemLeft>$</InputItemLeft>
+            <Input placeholder="works also combined!"/>
+            <InputItemRight>$</InputItemRight>
+            <InputAddonRight>Price</InputAddonRight>
+        </InputGroup>
+    </Card>
+
+    ```js copy
+    <Card flex direction="col" gap="4">
+        <InputGroup>
+            <InputItemLeft>go:</InputItemLeft>
+            <Input placeholder="item and addon combined!"/>
+            <InputAddonRight>Go</InputAddonRight>
+        </InputGroup>
+        <InputGroup>
+            <InputAddonLeft>Price</InputAddonLeft>
+            <Input placeholder="also works swapped!"/>
+            <InputItemRight>€</InputItemRight>
+        </InputGroup>
+    </Card>
+    ```
+
+    ## Controlled Example
+    This is a example to create a simple input and display the value of the input somewhere else.
+    <br/>
+    <ControlledInputExample/>
+
+    ```js copy
+    const [value, setValue] = useState("");
+    const handleChange = (event) => setValue(event.target.value);
+
+    <Card flex direction="col" gap="4">
+        <Text>Value of input: {value}</Text>
+        <Input onChange={handleChange} value={value} placeholder="Enter some text"/>
+    </Card>
+    ```
+
+    ## Password Example
+    This is a example to create a simple password input with the functionality to hide and show the input.
+    <br/>
+    <PasswordInputExample/>
+
+    ```js copy
+    import { useState } from "react";
+    const [show, setShow] = useState(false);
+    const handleClick = () => setShow(!show);
+
+    <Card>
+        <InputGroup>
+            <Input type={show ? "text" : "password"} placeholder="Enter password"/>
+            <InputAddonRight className="select-none cursor-pointer" onClick={handleClick}>
+                {show ? "Hide" : "Show"}
+            </InputAddonRight>
+        </InputGroup>
+    </Card>
+    ```
+
+    ## Other Input types
+    There are other input types such as `dateTime`, `color`, `search`, `file` etc. you can also use.
+    <br/>
+    <Card flex direction="col" gap="4">
+        <Text>Type: `dateTime-local`</Text>
+        <Input type="datetime-local"/>
+    </Card>
+
+    ```js copy
+    <Card flex direction="col" gap="4">
+        <Text>Type: `dateTime-local`</Text>
+        <Input type="datetime-local"/>
+    </Card>
+    ```
+
+    <Card flex direction="col" gap="4">
+        <Text>Type: `color`</Text>
+        <InputGroup>
+            <InputAddonLeft>Select color:</InputAddonLeft>
+            <Input className="w-14" type="color"/>
+        </InputGroup>
+    </Card>
+
+    ```js copy
+    <Card flex direction="col" gap="4">
+        <Text>Type: `color`</Text>
+        <InputGroup>
+            <InputAddonLeft>Select color:</InputAddonLeft>
+            <Input className="w-14" type="color"/>
+        </InputGroup>
+    </Card>
+    ```
+
+    <Card flex direction="col" gap="4">
+        <Text>Type: `file`</Text>
+        <Input type="file"/>
+    </Card>
+
+    ```js copy
+    <Card flex direction="col" gap="4">
+        <Text>Type: `file`</Text>
+        <Input type="file"/>
+    </Card>
+    ```
+
+    </Tabs.Tab>
+
+    <Tabs.Tab>
+    ## Input Properties
+    These are the specific properties of the `Input` component.
+    <br/>
+    <ComponentPropSection property={{
+        name: "variant",
+        description: "The variant of the input",
+        type: ["outlined", "filled"],
+        default: "outlined",
+    }}/>
+    </Tabs.Tab>
+</Tabs>

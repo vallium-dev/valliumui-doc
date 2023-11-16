@@ -10,7 +10,7 @@ const config: DocsThemeConfig = {
 	// chat: {
 	// 	link: "https://discord.com",
 	// },
-	docsRepositoryBase: "https://github.com/vallium-dev/valliumui-doc",
+	docsRepositoryBase: "https://github.com/vallium-dev/valliumui-doc/tree/main",
 	footer: {
 		text: "Documentation page powered by Nextra",
 	},
